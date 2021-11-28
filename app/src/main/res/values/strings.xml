@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">ELE599AndroidOpenCVTutorial</string>
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
+    <string name="app_features">Features</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_camera">Camera</string>
+    <string name="menu_privacy">Privacy Statement</string>
+    <string name="menu_rate">Rate Us</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_faq">FAQ</string>
+    <string name="menu_help"><![CDATA[Help & Feedback]]></string>
+    <string name="app_info">App Info</string>
+    <string name="support">Support</string>
 </resources>

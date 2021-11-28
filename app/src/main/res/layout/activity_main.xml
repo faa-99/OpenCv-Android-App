@@ -1,27 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
-
-    <org.opencv.android.JavaCameraView
-        android:id="@+id/opencv_tutorial_activity_surface_view"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
-    <TextView
+    android:id="@+id/drawer_layout"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
+    tools:context=".MainActivity">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </androidx.core.widget.NestedScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#8FC7CD"
+            app:titleTextColor="#00000000"
+            android:id="@+id/toolbar"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:fitsSystemWindows="true" />
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="X:0, Y:0"
-        android:textColor="#B0171F"
-        android:id="@+id/touch_coordinates"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/touch_coordinates"
-        android:text="Color:"
-        android:textColor="#B0171F"
-        android:id="@+id/touch_color"
-        />
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:id="@+id/nav_view"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/drawer_menu">
 
-</RelativeLayout>
+    </com.google.android.material.navigation.NavigationView>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
