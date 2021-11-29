@@ -13,6 +13,10 @@
                     android:id="@+id/nav_camera"
                     android:icon="@drawable/ic_camera"
                     android:title="@string/menu_camera" />
+                <item
+                    android:id="@+id/nav_filters"
+                    android:icon="@drawable/ic_home"
+                    android:title="@string/menu_filters" />
             </menu>
         </item>
     </group>

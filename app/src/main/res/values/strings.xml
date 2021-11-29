@@ -5,6 +5,7 @@
     <string name="app_features">Features</string>
     <string name="menu_home">Home</string>
     <string name="menu_camera">Camera</string>
+    <string name="menu_filters">Filters</string>
     <string name="menu_privacy">Privacy Statement</string>
     <string name="menu_rate">Rate Us</string>
     <string name="menu_share">Share</string>

@@ -47,6 +47,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new PrivacyFragment()).commit();
                 break;
+            case R.id.nav_filters:
+                startActivity(new Intent(getApplicationContext(),FilterActivity.class));
+                break;
             case R.id.nav_faq:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new FAQFragment()).commit();
