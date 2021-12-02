@@ -38,8 +38,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setCheckedItem((R.id.nav_status));
     }
 
-
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -49,6 +47,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_filters:
                 startActivity(new Intent(getApplicationContext(),FilterActivity.class));
+                break;
+            case R.id.nav_face_detection:
+                startActivity(new Intent(getApplicationContext(),FaceActivity.class));
                 break;
             case R.id.nav_faq:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

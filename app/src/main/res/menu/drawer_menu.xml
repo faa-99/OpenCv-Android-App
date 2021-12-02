@@ -17,6 +17,10 @@
                     android:id="@+id/nav_filters"
                     android:icon="@drawable/ic_home"
                     android:title="@string/menu_filters" />
+                <item
+                    android:id="@+id/nav_face_detection"
+                    android:icon="@drawable/ic_home"
+                    android:title="@string/menu_face_detection" />
             </menu>
         </item>
     </group>

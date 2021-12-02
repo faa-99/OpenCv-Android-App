@@ -9,3 +9,5 @@ dependencyResolutionManagement {
 rootProject.name = "ELE599AndroidOpenCVTutorial"
 include ':app'
 include ':sdk'
+include "opencv"
+project(":opencv").projectDir = file("sdk")

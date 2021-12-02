@@ -24,6 +24,8 @@ import org.opencv.core.Rect;
 import org.opencv.core.Scalar;
 import org.opencv.imgproc.Imgproc;
 
+import java.io.IOException;
+
 public class CameraActivity extends AppCompatActivity implements OnTouchListener, CvCameraViewListener2 {
 
     double x = -1, y = -1;
@@ -33,7 +35,7 @@ public class CameraActivity extends AppCompatActivity implements OnTouchListener
     private Scalar mBlobColorRgba, mBlobColorHsv;
     private final BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
         @Override
-        public void onManagerConnected(int status) {
+        public void onManagerConnected(int status) throws IOException {
             switch (status) {
                 case LoaderCallbackInterface.SUCCESS: {
                     //Log.i(TAG, "OpenCV loaded successfully");
@@ -81,7 +83,11 @@ public class CameraActivity extends AppCompatActivity implements OnTouchListener
         if (!OpenCVLoader.initDebug()) {
             OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION, this, mLoaderCallback);
         } else {
-            mLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);
+            try {
+                mLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
