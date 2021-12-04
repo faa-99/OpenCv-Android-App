@@ -45,7 +45,7 @@
             android:layout_marginEnd="29dp"
             android:layout_marginRight="29dp"
             android:lineSpacingExtra="2dp"
-            android:text="Quarantime is designed to spread awareness\nregarding COVID-19. Thus,\nyour information, as well as your contact information,\nwill remain private and will not be sold to any third\nparties. Your contact information will only be used in\nthe case of the need for help.\n"
+            android:text="This application is designed to explore the features of OpenCV. Thus, the camera data will not be captured or stored in any way, and your data will remain private and will not be shared to any third parties."
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

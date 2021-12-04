@@ -23,7 +23,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_normaluser"/>
+            app:srcCompat="@drawable/opencv"/>
 
         <TextView
             android:id="@+id/textView37"
@@ -35,12 +35,12 @@
             android:layout_marginEnd="74dp"
             android:layout_marginRight="74dp"
             android:lineSpacingExtra="2dp"
-            android:text="Current Status: Normal User\nExercise safety and follow instructions to\nensure your health condition.\nCheck Donation section.\n"
+            android:text="This application serves as a fun introduction \n to OpenCV library and its different applications. \n You can try out different filters, perform face \n detection , and face swapping!"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView12"
-            app:srcCompat="@drawable/ic_normaluser"/>
+            app:srcCompat="@drawable/opencv"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

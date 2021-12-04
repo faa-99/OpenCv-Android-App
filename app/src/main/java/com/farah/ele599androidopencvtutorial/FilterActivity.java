@@ -118,12 +118,10 @@ public class FilterActivity extends AppCompatActivity implements CvCameraViewLis
         mRgba = inputFrame.rgba();
         mGray = inputFrame.gray();
         Imgproc.cvtColor(mRgba, bgr, Imgproc.COLOR_RGB2BGR);
-      //  Imgproc.cvtColor(bgr, bgr, Imgproc.COLOR_BGR2RGB);
 
         if(blur_flag){
             Imgproc.GaussianBlur(mRgba,bgr, new Size(21,21),0);
             Imgproc.cvtColor(bgr, bgr, Imgproc.COLOR_BGR2RGB);
-           // Imgproc.cvtColor(bgr, bgr, Imgproc.COLOR_RGB2BGR);
         }
 
         if(cartoon_flag){
@@ -149,7 +147,6 @@ public class FilterActivity extends AppCompatActivity implements CvCameraViewLis
         if(hdr_flag){
             Photo.detailEnhance(mRgba, bgr);
             Imgproc.cvtColor(bgr, bgr, Imgproc.COLOR_BGR2RGB);
-            Imgproc.cvtColor(bgr, bgr, Imgproc.COLOR_RGB2BGR);
         }
 
 
@@ -162,23 +159,43 @@ public class FilterActivity extends AppCompatActivity implements CvCameraViewLis
 
     public void blur(View view) {
         blur_flag = !blur_flag;
+        cartoon_flag = false;
+        invert_flag = false;
+        hdr_flag = false;
+        gray_flag = false;
     }
 
     public void cartoonize(View view){
         cartoon_flag = !cartoon_flag;
+        blur_flag = false;
+        invert_flag = false;
+        hdr_flag = false;
+        gray_flag = false;
     }
 
     public void invert(View view){
         invert_flag = !invert_flag;
+        blur_flag = false;
+        cartoon_flag = false;
+        hdr_flag = false;
+        gray_flag = false;
     }
 
     public void hdr(View view){
-       hdr_flag = !hdr_flag;
+        hdr_flag = !hdr_flag;
+        invert_flag = false;
+        blur_flag = false;
+        cartoon_flag = false;
+        gray_flag = false;
     }
 
 
     public void gray(View view){
         gray_flag = !gray_flag;
+        hdr_flag = false;
+        invert_flag = false;
+        blur_flag = false;
+        cartoon_flag = false;
     }
 
     private BaseLoaderCallback baseCallback = new BaseLoaderCallback(this){
@@ -197,26 +214,5 @@ public class FilterActivity extends AppCompatActivity implements CvCameraViewLis
             }
         }
     };
-
-    //private void dispatchTakePictureIntent() {
-      //  Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        //try {
-          //  startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-        //} catch (ActivityNotFoundException e) {
-            // display error state to the user
-        //}
-    //}
-
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-//            Bundle extras = data.getExtras();
-//            Bitmap imageBitmap = (Bitmap) extras.get("data");
-//            Mat src = new Mat();
-//            Utils.bitmapToMat(imageBitmap, src);
-//            faceID.setImageBitmap(imageBitmap);
-//        }
-//    }
 
 }
